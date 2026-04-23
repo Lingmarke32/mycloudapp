@@ -4,8 +4,8 @@ jobs:
 build:
 runs-on: ubuntu-latest
 steps:
--name: checkout code
-run: actions/checkout@v3
+-name: Checkout code
+uses: actions/checkout@v3
 -name: Build Docker Image
 run: docker build -t mycloudapp .
 -name: Run Container Test
