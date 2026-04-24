@@ -1,3 +1,1 @@
-FROM UBUNTU
-RUN apt update && apt install -y nginx
-CMD ["nginx", "-g","deamon off;"]
+FROM nginx:latest
