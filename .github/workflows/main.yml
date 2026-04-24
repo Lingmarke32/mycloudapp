@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Checkout code
-       uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      -name: Build Docker Image
-       run: docker build -t mycloudapp .
+      - name: Build Docker Image
+        run: docker build -t mycloudapp .
 
-      -name: Run Container Test
-       run: |
-         docker run -d -p 8080:80 mycloudapp
-         sleep 5
+      - name: Run Container Test
+        run: |
+          docker run -d -p 8080:80 mycloudapp
+          sleep 5
 
-      -name: Test App
-       run: curl http://localhost:8080
+      - name: Test App
+        run: curl http://localhost:8080
