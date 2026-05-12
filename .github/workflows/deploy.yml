@@ -21,6 +21,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo docker pull lingmarke32/mycloudapp:latest
-            sudo docker stop myapp || true
-            sudo docker rm myapp || true
+            sudo docker stop $(sudo docker ps -q) || true
+            sudo docker rm $(sudo docker ps -aq) || true
             sudo docker run -d --name myapp -p 8080:80 lingmarke32/mycloudapp:latest
